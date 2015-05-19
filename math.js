@@ -1,5 +1,5 @@
 /**
- * Dirty Math lib for dealing with "64" bit integers.
+ * Dirty Math lib for dealing with "64 bit" integers.
  * Actually tries to deal with number of an arbitrary length
  * @module math
  * @author Eric Satterwhite

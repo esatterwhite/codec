@@ -2,7 +2,6 @@ var math    = require('./math')
 var letters = 'acdegilmnoprstuw';
 
 function hash( str ){
-	debugger;
 	var h = '7';
     var idx = -1;
 	for( var x=0,len=letters.length; x<len; x++){

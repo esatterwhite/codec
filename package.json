@@ -4,14 +4,19 @@
   "description": "Hashing & Unhashing example",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test"
   },
   "author": "Eric Satterwhite",
   "license": "ISC",
   "dependencies": {
-    "bignum": "^0.10.0"
+    "bignum": "^0.10.0",
+    "debug": "^2.2.0"
+  },
+  "bundledDependencies": [
+    "bignum",
+  	"debug"
+  ],
+  "devDependencies": {
+    "mocha": "^2.2.5"
   }
-  ,"bundledDependencies":[
-	"bignum"
-  ]
 }

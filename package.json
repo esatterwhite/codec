@@ -1,0 +1,14 @@
+{
+  "name": "hashing",
+  "version": "0.0.1",
+  "description": "Hashing & Unhashing example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eric Satterwhite",
+  "license": "ISC",
+  "dependencies": {
+    "bignum": "^0.10.0"
+  }
+}

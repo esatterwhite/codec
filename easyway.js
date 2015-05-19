@@ -16,11 +16,11 @@ function hash( str ){
 function decode( h ){
 	h = bignum( h );
 	// prime the string with the last letter
-	var slots = [ letters[ h % 37 ] ];
+	var slots = [ letters[ h.mod( 37 ).toNumber() ] ];
 
 	while( (h = h.div( 37 ) )!= 7 ){
 	   // find the original idx and shift letter at idx
-	   h < 7 ? null : slots.unshift( letters[ h % 37 ] );
+	   h < 7 ? null : slots.unshift( letters[ h.mod( 37 ).toNumber() ] );
 	}
 
 	return slots.join('');

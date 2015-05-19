@@ -1,5 +1,24 @@
-var bignum = require('bignum');
-var letters = 'acdegilmnoprstuw';
+/*jshint laxcomma: true, smarttabs: true, node: true*/
+'use strict';
+/**
+ * Implements the hashing algorithm using bignum addon
+ * @module codec/easyway
+ * @author Eric Satterwhite
+ * @since 0.0.1
+ * @requires bignum
+ */
+
+var bignum = require('bignum')
+  , letters = 'acdegilmnoprstuw'
+  ;
+
+/**
+ * Given a string will generate a numeric hash
+ * @static
+ * @function hash
+ * @param {String} input
+ * @return {BigNum}
+ **/
 function hash( str ){
 	var h = bignum(7);
     var idx = -1;
@@ -13,6 +32,13 @@ function hash( str ){
 	return h;
 }
 
+/**
+ * Given a hash value, will return the decoded string
+ * @static
+ * @function hash
+ * @param {String|Number|BigNum} input
+ * @return {String} decoded string value
+ **/
 function decode( h ){
 	h = bignum( h );
 	// prime the string with the last letter

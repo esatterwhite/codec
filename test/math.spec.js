@@ -52,6 +52,11 @@ describe('dirty math',function(){
 				var sum = math.add('5000000000000000000000', '1')
 				assert.equal( sum, '5000000000000000000001');
 			});
+
+			it('should carry the one', function(){
+				var sum = math.add('499', '1')
+				assert.equal( sum, '500');
+			});
 		});
 		describe('multiply', function(){
 			it('should keep significant figures in large numbers', function(){

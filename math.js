@@ -1,13 +1,23 @@
 /**
  * Dirty Math lib for dealing with "64 bit" integers.
  * Actually tries to deal with number of an arbitrary length
- * @module math
+ * @module codec/math
  * @author Eric Satterwhite
+ * @requires debug
  **/
-var debugadd = require('debug')('math:add');
-var debugdiv = require('debug')('math:div');
-var debugmul = require('debug')('math:mul');
+var debugadd = require('debug')('math:add')
+  , debugdiv = require('debug')('math:div')
+  , debugmul = require('debug')('math:mul')
+  ;
 
+/**
+ * Performs addition on large numbers using string values
+ * @static
+ * @method add
+ * @param {String} left The left hand side of the addition 
+ * @param {String} right The right hand side of the addition
+ * @return {String} The sume of the parts
+ **/
 function add( a, b ){
 	a = a.toString();
 	b = b.toString();
@@ -35,6 +45,15 @@ function add( a, b ){
 	return sums.reverse().join('');	
 }
 
+/**
+ * Performs division of large numbers using string values
+ * @static
+ * @method divide
+ * @param {String} dividend The number to be divided 
+ * @param {String} divisor  The number to divide by
+ * @param {Boolean} [remainder=false] if true, function will return the remainder rather than the quotient 
+ * @return {String} The quotient of the parts
+ **/
 function divide( a, b, remainder ){
 	a = String(a);
 	b = String(b);
@@ -62,10 +81,28 @@ function divide( a, b, remainder ){
 	}
 }
 
+/**
+ * Performs modulo of large numbers using string values. Same as divide( a, b, true )
+ * @static
+ * @method mod
+ * @param {String} dividend The number to be divided 
+ * @param {String} divisor  The number to divide by
+ * @param {Boolean} [remainder=false] if true, function will return the remainder rather than the quotient 
+ * @return {String} the remaining value of the division operation
+ **/
 function mod( a, b ){
 	return divide( a,b, true );
 }
 
+
+/**
+ * Performs modulo of large numbers using string values. Same as divide( a, b, true )
+ * @static
+ * @method mod
+ * @param {String} left left hand side of the multipliation
+ * @param {String} right the right hand side of the multiplication
+ * @return {String} product
+ **/
 function multiply( a, b ){
 
 	var carry    = 0;

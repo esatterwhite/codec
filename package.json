@@ -1,5 +1,5 @@
 {
-  "name": "hashing",
+  "name": "codec",
   "version": "0.0.1",
   "description": "Hashing & Unhashing example",
   "main": "index.js",

@@ -1,6 +1,23 @@
+/*jshint laxcomma: true, smarttabs: true, node: true*/
+'use strict';
+/**
+ * Implements the hashing algorithm using string based arithmetic
+ * @module codec/hardway
+ * @author Eric Satterwhite
+ * @since 0.0.1
+ * @requires codec/math
+ */
 var math    = require('./math')
-var letters = 'acdegilmnoprstuw';
+   , letters = 'acdegilmnoprstuw'
+   ;
 
+/**
+ * Given a string will generate a numeric hash
+ * @static
+ * @function hash
+ * @param {String} input
+ * @return {String}
+ **/
 function hash( str ){
 	var h = '7';
     var idx = -1;
@@ -13,6 +30,13 @@ function hash( str ){
 	return h;
 }
 
+/**
+ * Given a hash value, will return the decoded string
+ * @static
+ * @function hash
+ * @param {String|Number|BigNum} input
+ * @return {String} decoded string value
+ **/
 function decode( h ){
 
 	// prime the string with the last letter

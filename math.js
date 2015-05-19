@@ -4,10 +4,14 @@
  * @module math
  * @author Eric Satterwhite
  **/
+var debugadd = require('debug')('math:add');
+var debugdiv = require('debug')('math:div');
+var debugmul = require('debug')('math:mul');
 
 function add( a, b ){
 	a = a.toString();
 	b = b.toString();
+	debugadd('adding', a,b)
 	var carry   = 0;
 	var idx     = 0;
 	var sums    = [] 
@@ -34,6 +38,7 @@ function add( a, b ){
 function divide( a, b, remainder ){
 	a = String(a);
 	b = String(b);
+	debugdiv("%s / %s", a, b );
 	var pos = b.length
 	var num = ~~a.substring( 0, pos );
 	var r = 0;
@@ -50,6 +55,7 @@ function divide( a, b, remainder ){
 				num = ~~( num.toString() + next );
 				r *= 10
 			} else {
+				debugdiv("returning remainder: %s", !!remainder);
 				return remainder === true ? num : r
 			}
 		}
@@ -69,6 +75,7 @@ function multiply( a, b ){
 	var digit_b;
 	var product;
 
+	debugmul(a,b);
 	a = a.split('').reverse();
 	b = b.split('').reverse();
 
